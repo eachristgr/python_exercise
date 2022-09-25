@@ -66,7 +66,7 @@ class PopulationData:
         for min_idx in minimums:
             # If the population of the county is within +-100  of the average, print the county's record to the standard output stream
             if df.iloc[min_idx]['Absolute Differece from Average'] <= 100:
-                print(f'{records[min_idx]}')
+                print(f'{records[min_idx]}')  # Unless otherwise instructed, print() will default to writing to standard output.
 
         # Lists are returned due to the assumption that multiple minimums may exist
         return list(df.iloc[minimums]['County']), list(df.iloc[minimums]['Population'])

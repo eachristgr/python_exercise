@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from PopulationData import PopulationData, NoDataForTheGivenYearError
+from PopulationData import PopulationData
 
 PopulationData_obj = PopulationData()
 
@@ -36,8 +36,6 @@ class Test(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             countys, populations = PopulationData_obj.closest_to_average(2021)
         self.assertTrue(expected in str(context.exception))
-
-    # // Maybe test stdout, stderr is possible
 
 if __name__ == '__main__':
     unittest.main()
